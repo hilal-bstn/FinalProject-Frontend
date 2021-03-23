@@ -16,7 +16,7 @@ export class ProductComponent implements OnInit {
   
   products:Product[]=[];
   dataLoaded=false;
-  filterText:"";
+  filterText="";
   constructor(private productService:ProductService,private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
     private cartService:CartService) { }
@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
       this.dataLoaded=true;
     });
      }//javascriptte her şey fonksiyon class yok
-     getProductsByCategory(categoryId:Number){
+     getProductsByCategory(categoryId:number){
       this.productService.getProductsByCategory(categoryId).subscribe(response=>{
         this.products=response.data
         this.dataLoaded=true;
